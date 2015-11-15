@@ -1,0 +1,18 @@
+Name: Yang Pan (ypan01)
+
+Special Instructions:
+    My Makefile is the one provided in the spec that is used
+    by the provided test harness. It creates it using make intel-all
+    (which can also just be run as make) which will create the 32 bit
+    and 64 bit versions of malloc.o as well as the .so libraries for each 
+
+Misc Info:
+    Address spaces need to be divisible by 16. To be safe, I aligned the 
+    block headers as well as their content to these divisible by 16
+    addresses.
+    Also, I wasn't too sure about the DEBUG_MALLOC output values.
+    For example, for malloc it would be 
+    "MALLOC: malloc(%d) => (ptr=%p, size=%d)"
+    For this instance I just made the first %d the size value passes to
+    malloc. Then the %p would be the address returned by malloc and the
+    final %d would be the size field of the header of the block returned.
